@@ -116,8 +116,16 @@ typedef NS_ENUM(NSUInteger, DBBodyPreviewViewControllerViewState) {
 }
 
 - (IBAction)copyBody:(UIButton *)sender {
-    UIPasteboard* pasteboard = [UIPasteboard generalPasteboard];
-    [pasteboard setString: self.textView.text];
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    [pasteboard setString:self.textView.text];
+
+    UIAlertController *toast = [UIAlertController alertControllerWithTitle:@"Copy successfully" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [self presentViewController:toast animated:YES completion:nil];
+    [self performSelector:@selector(dismiss:) withObject:toast afterDelay:1.0];
+}
+
+- (void)dismiss:(UIAlertController *)alert {
+    [alert dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
