@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HRx-A4-BvJ">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HRx-A4-BvJ">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,15 +20,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="H3H-GY-yty">
-                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                             </activityIndicatorView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BI3-Xl-1ZM">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VrD-s8-wGH">
+                                <rect key="frame" x="16" y="627" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bga-sN-ZVh"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Copy Body"/>
+                                <connections>
+                                    <action selector="copyBody:" destination="HRx-A4-BvJ" eventType="touchUpInside" id="lkj-bU-Gpv"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MVi-3i-czO">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
@@ -40,25 +49,29 @@
                             <constraint firstItem="H3H-GY-yty" firstAttribute="centerY" secondItem="cDF-eH-yC2" secondAttribute="centerY" id="3Ms-sc-Cld"/>
                             <constraint firstAttribute="trailing" secondItem="MVi-3i-czO" secondAttribute="trailing" id="CJa-gj-LAD"/>
                             <constraint firstItem="BI3-Xl-1ZM" firstAttribute="leading" secondItem="cDF-eH-yC2" secondAttribute="leading" id="Giq-CS-kYc"/>
+                            <constraint firstItem="VrD-s8-wGH" firstAttribute="top" secondItem="BI3-Xl-1ZM" secondAttribute="bottom" id="Mvx-pQ-GdV"/>
                             <constraint firstAttribute="bottom" secondItem="MVi-3i-czO" secondAttribute="bottom" id="QH7-mi-Y0E"/>
-                            <constraint firstAttribute="bottom" secondItem="BI3-Xl-1ZM" secondAttribute="bottom" id="U23-hm-Mz4"/>
+                            <constraint firstItem="VrD-s8-wGH" firstAttribute="leading" secondItem="cDF-eH-yC2" secondAttribute="leadingMargin" id="SVm-aG-q9t"/>
                             <constraint firstItem="MVi-3i-czO" firstAttribute="top" secondItem="cDF-eH-yC2" secondAttribute="top" id="Vf0-qw-9IH"/>
                             <constraint firstItem="H3H-GY-yty" firstAttribute="centerX" secondItem="cDF-eH-yC2" secondAttribute="centerX" id="Wfg-Mn-mkm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VrD-s8-wGH" secondAttribute="trailing" id="dFw-bY-XSw"/>
                             <constraint firstItem="MVi-3i-czO" firstAttribute="leading" secondItem="cDF-eH-yC2" secondAttribute="leading" id="emM-iB-VeA"/>
                             <constraint firstItem="BI3-Xl-1ZM" firstAttribute="top" secondItem="cDF-eH-yC2" secondAttribute="top" id="fgy-Jc-ceF"/>
+                            <constraint firstItem="o7g-Oo-T1D" firstAttribute="top" secondItem="VrD-s8-wGH" secondAttribute="bottom" id="odq-OA-sbg"/>
                             <constraint firstAttribute="trailing" secondItem="BI3-Xl-1ZM" secondAttribute="trailing" id="uJU-Lk-HcX"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="activityIndicator" destination="H3H-GY-yty" id="B0W-Nr-9ih"/>
+                        <outlet property="bodyCopyButton" destination="VrD-s8-wGH" id="Y9x-L7-Eca"/>
                         <outlet property="imageView" destination="MVi-3i-czO" id="hJP-w5-RR2"/>
                         <outlet property="textView" destination="BI3-Xl-1ZM" id="67I-Id-pfX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jjK-6H-eTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="161"/>
+            <point key="canvasLocation" x="133.59999999999999" y="160.56971514242881"/>
         </scene>
     </scenes>
 </document>

@@ -33,6 +33,7 @@ typedef NS_ENUM(NSUInteger, DBBodyPreviewViewControllerViewState) {
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIButton *bodyCopyButton;
 
 @end
 
@@ -92,6 +93,7 @@ typedef NS_ENUM(NSUInteger, DBBodyPreviewViewControllerViewState) {
     [UIView animateWithDuration:animated ? 0.35 : 0.0 animations:^{
         self.activityIndicator.alpha = 0.0;
         self.textView.alpha = 0.0;
+        self.bodyCopyButton.alpha = 0.0;
         self.imageView.alpha = 0.0;
         switch (state) {
             case DBBodyPreviewViewControllerViewStateLoading: {
@@ -101,6 +103,7 @@ typedef NS_ENUM(NSUInteger, DBBodyPreviewViewControllerViewState) {
             }
             case DBBodyPreviewViewControllerViewStateShowingText:
                 self.textView.alpha = 1.0;
+                self.bodyCopyButton.alpha = 1.0;
                 break;
             case DBBodyPreviewViewControllerViewStateShowingImage:
                 self.imageView.alpha = 1.0;
@@ -110,6 +113,11 @@ typedef NS_ENUM(NSUInteger, DBBodyPreviewViewControllerViewState) {
             [self.activityIndicator stopAnimating];
         }
     }];
+}
+
+- (IBAction)copyBody:(UIButton *)sender {
+    UIPasteboard* pasteboard = [UIPasteboard generalPasteboard];
+    [pasteboard setString: self.textView.text];
 }
 
 @end
